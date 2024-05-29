@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stlye.css">
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
     <title>Wheather App</title>
 </head>
 <body>
     <div class="card">
         <div class="search">
+           <form >
             <input type="text" placeholder="enter city name"
             spellcheck="false">
             <button><img src="images/search.png" ></button>
+           </form>
         </div>
-        <div class="weather hidden">
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+        <div class="weather ">
             <img src="images/rain.png" class="weather-icon">
             <h1 class="temp">21 c</h1>
             <h2 class="city">New York</h2>
@@ -36,6 +42,7 @@
 
 
 
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

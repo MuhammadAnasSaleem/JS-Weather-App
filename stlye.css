@@ -82,14 +82,13 @@ body{
     font-size: 28px;
     margin-top: -10px;
 }
-.hidden{
-    height: 0;
-    overflow-y: hidden;
-    transition: height 0.5s ease;
-    
+.weather{
+    display: none;
 }
-.visible{
-    height: auto;
-    transition: height 50s ease;
-    color: #fff;
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
 }
