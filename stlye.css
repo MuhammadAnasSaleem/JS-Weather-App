@@ -82,3 +82,14 @@ body{
     font-size: 28px;
     margin-top: -10px;
 }
+.hidden{
+    height: 0;
+    overflow-y: hidden;
+    transition: height 0.5s ease;
+    
+}
+.visible{
+    height: auto;
+    transition: height 50s ease;
+    color: #fff;
+}
