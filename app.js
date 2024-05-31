@@ -4,66 +4,67 @@ const form = document.querySelector("form")
 const searchBox = document.querySelector(".search input")
 const searchButton = document.querySelector(".search button")
 const icon = document.querySelector(".weather-icon")
+let loaderDiv = document.querySelector(".error")
 
-const checkWeather = async (event) =>{
-try{
-event.preventDefault();
-var city = searchBox.value
+const checkWeather = async (event) => {
+    try {
+        event.preventDefault();
+        var city = searchBox.value
+        loaderDiv.style.display= "inline";
+
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
 
 
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
-   
-   
         var data = await response.json();
 
-   
 
+        console.log(data);
 
 
         document.querySelector(".city").innerHTML = data.name
         document.querySelector(".temp").innerHTML = data.main.temp + "°C"
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%"
         document.querySelector(".wind").innerHTML = data.wind.speed + "km/h"
-    
-    
-        if(data.weather[0].main == "Clouds"){
+
+
+        if (data.weather[0].main == "Clouds") {
             icon.src = "images/clouds.png"
         }
-        else if(data.weather[0].main == "Clear"){
+        else if (data.weather[0].main == "Clear") {
             icon.src = "images/clear.png"
         }
-        else if(data.weather[0].main == "Drizzle"){
+        else if (data.weather[0].main == "Drizzle") {
             icon.src = "images/drizzle.png"
-        }else if(data.weather[0].main == "Mist"){
+        } else if (data.weather[0].main == "Mist") {
             icon.src = "images/mist.png"
         }
-        else if(data.weather[0].main == "Rain"){
+        else if (data.weather[0].main == "Rain") {
             icon.src = "images/rain.png"
         }
-    
-    
-    
-    document.querySelector(".error").style.display = "none"
-    document.querySelector(".weather").style.display = "block"
 
 
-    searchBox.value = ""
-    
-    
-    
-}
- catch (error)
-{
 
-    swal("ERROR", "Invalid city name ", "error");
+        document.querySelector(".weather").style.display = "block"
 
-    document.querySelector(".error").style.display = "block"
-    document.querySelector(".weather").style.display = "none"
 
-}  
-    
+        
+        
+        
+    }
+    catch (error) {
+        
+        swal("ERROR", "Invalid city name ", "error");
+        
+        
+        // document.querySelector(".error").style.display = "block"
+        document.querySelector(".weather").style.display = "none"
+        
+    }
+    finally{
+        searchBox.value = ""
+        loaderDiv.style.display = "none";
+    }
 }
 
 form.addEventListener("submit", checkWeather)
-
 
