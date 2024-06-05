@@ -4,13 +4,14 @@ const form = document.querySelector("form")
 const searchBox = document.querySelector(".search input")
 const searchButton = document.querySelector(".search button")
 const icon = document.querySelector(".weather-icon")
-let loaderDiv = document.querySelector(".error")
+let loaderDiv = document.querySelector(".loader")
 
 const checkWeather = async (event) => {
     try {
         event.preventDefault();
         var city = searchBox.value
-        loaderDiv.style.display= "inline";
+        document.querySelector(".weather").style.display = "none"
+        loaderDiv.style.display= "flex";
 
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
 
