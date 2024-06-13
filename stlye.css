@@ -1,30 +1,40 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
-body{
+
+body {
     background: #222;
+    background-image: url(./images/background.jpg);
+    background-position: center;
+    background-size: cover;
 }
-.card{
+
+.card {
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    /* background: linear-gradient(135deg, #00feba, #5b548a); */
     color: #fff;
-    margin: 100px auto 0 ;
+    margin: 100px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 16px 0px rgba(255, 255, 255, 0.5);
 }
-.search{
+
+.search {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
 }
-.search input{
+
+.search input {
     border: 0;
     outline: 0;
     background-color: #ebfffc;
@@ -36,7 +46,8 @@ body{
     margin-right: 16px;
     font-size: 18px;
 }
-.search button{
+
+.search button {
     border: 0;
     outline: 0;
     background-color: #ebfffc;
@@ -45,23 +56,28 @@ body{
     height: 60px;
     cursor: pointer;
 }
-.search button img{
+
+.search button img {
     width: 16px;
 }
-.weather-icon{
+
+.weather-icon {
     width: 170px;
     margin-top: 30px;
 }
-.weather h1{
+
+.weather h1 {
     font-size: 80px;
     font-weight: 500;
 }
-.weather h2{
+
+.weather h2 {
     font-size: 45px;
     font-weight: 400;
     margin-top: -10px;
 }
-.details{
+
+.details {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -69,24 +85,30 @@ body{
     margin-top: 50px;
 
 }
-.col{
+
+.col {
     display: flex;
     align-items: center;
     text-align: left;
 
 }
-.col img{
+
+.col img {
     width: 20px;
     margin-right: 10px;
 }
-.humidity, .wind{
+
+.humidity,
+.wind {
     font-size: 28px;
     margin-top: -10px;
 }
-.weather{
+
+.weather {
     display: none;
 }
-.loader{
+
+.loader {
     text-align: center;
     /* margin-left: 10px; */
     font-size: 14px;
@@ -95,43 +117,44 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 /*loader start  */
 .pl {
     display: block;
     width: 9.375em;
     height: 9.375em;
-  }
-  
-  .pl__arrows,
-  .pl__ring-rotate,
-  .pl__ring-stroke,
-  .pl__tick {
-      animation-duration: 2s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-    
-    .pl__arrows {
-        animation-name: arrows42;
-        transform: rotate(45deg);
-        transform-origin: 16px 52px;
-    }
-    
-    .pl__ring-rotate,
-    .pl__ring-stroke {
-        transform-origin: 80px 80px;
-    }
-    
-  .pl__ring-rotate {
+}
+
+.pl__arrows,
+.pl__ring-rotate,
+.pl__ring-stroke,
+.pl__tick {
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.pl__arrows {
+    animation-name: arrows42;
+    transform: rotate(45deg);
+    transform-origin: 16px 52px;
+}
+
+.pl__ring-rotate,
+.pl__ring-stroke {
+    transform-origin: 80px 80px;
+}
+
+.pl__ring-rotate {
     animation-name: ringRotate42;
-  }
-  
-  .pl__ring-stroke {
+}
+
+.pl__ring-stroke {
     animation-name: ringStroke42;
     transform: rotate(-45deg);
 }
-  
-  .pl__tick {
+
+.pl__tick {
     animation-name: tick42;
 }
 
@@ -153,24 +176,24 @@ body{
 
 .pl__tick:nth-child(6) {
     animation-delay: -0.75s;
-  }
-  
-  .pl__tick:nth-child(7) {
-      animation-delay: -0.5s;
-    }
-    
-    .pl__tick:nth-child(8) {
-        animation-delay: -0.25s;
-    }
-    
-  /* Animations */
-  @keyframes arrows42 {
+}
+
+.pl__tick:nth-child(7) {
+    animation-delay: -0.5s;
+}
+
+.pl__tick:nth-child(8) {
+    animation-delay: -0.25s;
+}
+
+/* Animations */
+@keyframes arrows42 {
     from {
-      transform: rotate(45deg);
+        transform: rotate(45deg);
     }
-  
+
     to {
-      transform: rotate(405deg);
+        transform: rotate(405deg);
     }
 }
 
@@ -178,60 +201,62 @@ body{
     from {
         transform: rotate(0);
     }
-    
+
     to {
         transform: rotate(720deg);
     }
-  }
-  
-  @keyframes ringStroke42 {
-      from,
-      to {
-          stroke-dashoffset: 452;
-          transform: rotate(-45deg);
+}
+
+@keyframes ringStroke42 {
+
+    from,
+    to {
+        stroke-dashoffset: 452;
+        transform: rotate(-45deg);
     }
-    
+
     50% {
-      stroke-dashoffset: 169.5;
-      transform: rotate(-180deg);
+        stroke-dashoffset: 169.5;
+        transform: rotate(-180deg);
     }
-  }
-  
-  @keyframes tick42 {
-      from,
-      3%,
-      47%,
-      to {
-          stroke-dashoffset: -12;
-        }
-        
-        14%,
-        36% {
-            stroke-dashoffset: 0;
-        }
-    }
-    /* loader end */
+}
 
-    /* responsive start */
-    @media screen and (max-width: 500px) {
-        .card{
-            padding: 40px 15px;
-        }
+@keyframes tick42 {
 
-        .search input{
-            width: 200px;
-        }
-    }
-    @media screen and (max-width: 400px) {
-        .card{
-            padding: 40px 0px;
-        }
-
-        .search input{
-            width: 200px;
-        }
+    from,
+    3%,
+    47%,
+    to {
+        stroke-dashoffset: -12;
     }
 
-    /* responsive end */
+    14%,
+    36% {
+        stroke-dashoffset: 0;
+    }
+}
 
-    
+/* loader end */
+
+/* responsive start */
+@media screen and (max-width: 500px) {
+    .card {
+        padding: 40px 15px;
+    }
+
+    .search input {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card {
+        padding: 40px 0px;
+    }
+
+    .search input {
+        width: 200px;
+    }
+}
+
+/* responsive end */
