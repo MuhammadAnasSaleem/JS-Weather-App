@@ -242,7 +242,7 @@ body {
 /* loader end */
 
 /* responsive start */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 501px) {
     .card {
         padding: 40px 15px;
     }

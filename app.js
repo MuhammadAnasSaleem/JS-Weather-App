@@ -56,7 +56,7 @@ const checkWeather = async (event) => {
         
         swal("ERROR", "Invalid city name ", "error");
         
-        
+        // try
         // document.querySelector(".error").style.display = "block"
         document.querySelector(".weather").style.display = "none"
         
