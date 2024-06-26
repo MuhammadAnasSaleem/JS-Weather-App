@@ -11,7 +11,7 @@ const checkWeather = async (event) => {
         event.preventDefault();
         var city = searchBox.value
         document.querySelector(".weather").style.display = "none"
-        loaderDiv.style.display= "flex";
+        loaderDiv.style.display = "flex";
 
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
 
@@ -48,20 +48,20 @@ const checkWeather = async (event) => {
         document.querySelector(".weather").style.display = "block"
 
 
-        
-        
-        
+
+
+
     }
     catch (error) {
-        
+
         swal("ERROR", "Invalid city name ", "error");
-        
-        // try
+
+        // try  
         // document.querySelector(".error").style.display = "block"
         document.querySelector(".weather").style.display = "none"
-        
+
     }
-    finally{
+    finally {
         searchBox.value = ""
         loaderDiv.style.display = "none";
     }
